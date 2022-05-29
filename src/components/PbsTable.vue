@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { usePropertiesByDefault } from '@/composables/checkAddPropertiesByDefault';
+import { usePropertiesByDefault } from '../composables/tableDefaultConfiguration';
 
 const props = defineProps({
   tableData: Object

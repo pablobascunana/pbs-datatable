@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-import { useTranslation } from '@/composables/lang';
+import { useTranslation } from '../composables/lang';
 
 const props = defineProps({
   length: Number

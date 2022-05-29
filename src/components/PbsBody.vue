@@ -2,9 +2,9 @@
 import { ref } from 'vue';
 import draggable from 'vuedraggable';
 
-import { useWidth } from '@/composables/columnsWidth';
+import { useWidth } from '../composables/columnsWidth';
 
-const props = defineProps({
+defineProps({
   tableData: Object
 });
 
