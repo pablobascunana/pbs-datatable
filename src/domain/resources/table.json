@@ -1,0 +1,22 @@
+{
+  "header": [
+    { "id": "draggable", "name": "",          "field": "draggable" },
+    { "id": "firstname", "name": "Firstname", "field": "firstname", "width": "20%", "sort": true,  "edit": false, "order": "asc" },
+    { "id": "lastname",  "name": "Lastname",  "field": "lastname",  "width": "20%", "sort": true,  "edit": false, "order": ""  },
+    { "id": "age",       "name": "Age",       "field": "age",       "width": "10%", "sort": true,  "edit": false, "order": ""  },
+    { "id": "city",      "name": "City",      "field": "city",      "width": "10%", "sort": true,  "edit": true,  "order": ""  },
+    { "id": "date",      "name": "Date",      "field": "date",      "width": "20%", "sort": true,  "edit": true,  "order": ""  },
+    { "id": "phone",     "name": "Phone",     "field": "phone",     "width": "20%", "sort": true,  "edit": true,  "order": ""  },
+    { "id": "actions",   "name": "Actions",   "field": "actions",   "width": "10%" }
+  ],
+  "rows": [
+    { "draggable": ["drag-horizontal"], "firstname": "Lucía", "lastname": "Peréz",   "age": 23, "city": "Cuenca",  "date": "23-12-2020", "phone": "+34 666 777 888", "actions": ["eye-outline", "delete-outline"] },
+    { "draggable": ["drag-horizontal"], "firstname": "Ana",   "lastname": "García",  "age": 45, "city": "Madrid",  "date": "01-10-1995", "phone": "678 689 689",     "actions": ["eye-outline", "delete-outline"] },
+    { "draggable": ["drag-horizontal"], "firstname": "Luisa", "lastname": "Soriano", "age": 31, "city": "Segovia", "date": "14-04-2001", "phone": "654 789 123",     "actions": ["eye-outline", "delete-outline"] }
+  ],
+  "options": {
+    "dateFormat": "DD-MM-YYYY",
+    "draggableRows": true,
+    "draggableColumns": true
+  }
+}
