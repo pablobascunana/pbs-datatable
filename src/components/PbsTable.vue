@@ -2,6 +2,10 @@
 import { ref } from 'vue';
 import { usePropertiesByDefault } from '../composables/tableDefaultConfiguration';
 
+import PbsHeader from './PbsHeader.vue';
+import PbsBody from './PbsBody.vue';
+import PbsFooter from './PbsFooter.vue';
+
 const props = defineProps({
   tableData: Object
 });
