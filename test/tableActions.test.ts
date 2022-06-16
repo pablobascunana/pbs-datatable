@@ -68,3 +68,4 @@ describe('Test actions in datatable', () => {
     expect(wrapper.find(`#tableBodyActions-${icon}-${index}`).element.className).toContain('pointer');
   }
 })
+
