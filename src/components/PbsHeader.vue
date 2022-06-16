@@ -12,8 +12,6 @@ let headers = ref(props.tableData.header);
 
 const emit = defineEmits(['click-sort', 'drag-column-end'])
 
-const svgPath = "./src/assets/svg/";
-
 const isArrowNeutral = (header) => {
   return 'sort' in header && 'order' in header && header.order !== '' ? false : true;
 }
@@ -55,8 +53,8 @@ defineExpose({ headers, dragColumnEnd });
       :list="tableData.header"
       :disabled="!tableData.options.draggableColumns"
       :item-key="(key) => key"
-      tag="transition-group"
-      :component-data="{ tag: 'tr', name: 'flip-list', type: 'transition' }"
+      tag="tr"
+      :component-data="{ as: 'transition-group' }"
       @end="dragColumnEnd"
     >
       <template #item="{ element: header }">
@@ -77,7 +75,7 @@ defineExpose({ headers, dragColumnEnd });
           <img
             v-if="'sort' in header && header.sort"
             :id="`tableHeaderSort-${header.id}`"
-            :src="`${svgPath}triangle-small-up.svg`"
+            :src="`/triangle-small-up.svg`"
             alt="sort-icon"
             :class="{ 'table__header-arrow-right': isArrowNeutral(header), 
                       'table__header-arrow-down': isArrowDown(header)
@@ -90,7 +88,3 @@ defineExpose({ headers, dragColumnEnd });
     </draggable>
   </thead>
 </template>
-
-<style scoped lang="scss">
-@import "../assets/scss/components/table.scss";
-</style>

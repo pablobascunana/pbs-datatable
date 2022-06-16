@@ -1,5 +1,3 @@
-import { fileURLToPath, URL } from "url";
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import eslintPlugin from 'vite-plugin-eslint';
@@ -14,7 +12,9 @@ export default defineConfig({
     vue(),
     eslintPlugin(),
     vueI18n({
-      include: [path.resolve(__dirname, './i18n/locales/**')],
+      compositionOnly: false,
+      runtimeOnly: false,
+      include: [path.resolve(__dirname, './src/i18n/locales/**')],
     }),
     ViteImages({
       dirs: ['src/assets/svg'],
@@ -23,9 +23,24 @@ export default defineConfig({
       customSearchRegex: '([a-zA-Z0-9]+)',
     })
   ],
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, "./src/components/index.js"),
+      name: "PbsDatatable",
+      fileName: (format) => `pbs-datatable.${format}.js`,
+    },
+    rollupOptions: {
+      external: ["vue"],
+      output: {
+        globals: {
+          vue: "Vue"
+        }
+      }
+    }
+  },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL("./src", import.meta.url)),
+      '@': path.resolve(__dirname, './src'),
     }
   }
 })

@@ -109,6 +109,6 @@ defineExpose({ finalTable });
   ></pbs-footer>
 </template>
 
-<style scoped lang="scss">
-@import "../assets/scss/components/table.scss";
+<style lang="scss">
+@import "./PbsTable.scss";
 </style>

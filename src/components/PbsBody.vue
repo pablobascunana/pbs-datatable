@@ -10,7 +10,6 @@ defineProps({
 
 const emit = defineEmits(['click-action', 'edit-start', 'edit-stop']);
 
-const svgPath = "./src/assets/svg/";
 const editableValue = ref([]);
 
 const doAction = (action, index) => {
@@ -34,8 +33,8 @@ defineExpose({ editableValue });
     :disabled="!tableData.options.draggableRows"
     :item-key="(key) => key"
     class="table__body"
-    tag="transition-group"
-    :component-data="{ tag: 'tbody', name: 'flip-list', type: 'transition' }"
+    tag="tbody"
+    :component-data="{ as: 'transition-group' }"
   >
     <template #item="{ element: row, index }">
       <tr>
@@ -62,7 +61,7 @@ defineExpose({ editableValue });
             v-else
             :id="`tableBodyActions-${icon}-${index}`"
             :key="imgIndex"
-            :src="`${svgPath}${icon}.svg`"
+            :src="`${icon}.svg`"
             :alt="icon"
             :class="{ 'pointer': header.field === 'actions', 'move': header.field === 'draggable' }"
             @click="doAction(icon, index)"
@@ -72,7 +71,3 @@ defineExpose({ editableValue });
     </template>
   </draggable>
 </template>
-
-<style scoped lang="scss">
-@import "../assets/scss/components/table.scss";
-</style>

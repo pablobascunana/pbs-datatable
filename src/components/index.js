@@ -1,0 +1,1 @@
+export { default as PbsDatatable } from './PbsTable.vue';

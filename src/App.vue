@@ -1,6 +1,7 @@
 <script setup>
-import tableData from './domain/resources/table.json';
-import PbsDatatable from './components/PbsTable.vue';
+import tableData from '@/domain/resources/table.json';
+
+import { PbsDatatable } from '@/components/';
 
 const actionHandler = (params) => {
   console.log('Event: ' + params.action);
@@ -16,15 +17,3 @@ const actionHandler = (params) => {
     ></pbs-datatable>
   </div>
 </template>
-
-<style lang="scss">
-@import "./assets/scss/style.scss";
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  font-size: 1.75rem;
-}
-</style>

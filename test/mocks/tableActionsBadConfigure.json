@@ -1,0 +1,19 @@
+{
+  "header": [
+    { "id": "firstname", "name": "Firstname", "field": "firstname", "width": "20%" },
+    { "id": "lastname",  "name": "Lastname",  "field": "lastname",  "width": "20%" },
+    { "id": "age",       "name": "Age",       "field": "age",       "width": "10%" },
+    { "id": "city",      "name": "City",      "field": "city",      "width": "10%" },
+    { "id": "date",      "name": "Date",      "field": "date",      "width": "20%" },
+    { "id": "phone",     "name": "Phone",     "field": "phone",     "width": "20%" },
+    { "id": "actions",   "name": "Actions",   "field": "actions" }
+  ],
+  "rows": [
+    { "firstname": "Lucía", "lastname": "Peréz",   "age": 23, "city": "Cuenca",  "date": "12-23-2020", "phone": "+34 666 777 888" },
+    { "firstname": "Ana",   "lastname": "García",  "age": 23, "city": "Madrid",  "date": "10-01-1995", "phone": "678 689 689"     },
+    { "firstname": "Luisa", "lastname": "Soriano", "age": 31, "city": "Segovia", "date": "04-14-2001", "phone": "654 789 123"     }
+  ],
+  "options": {
+    "dateFormat": "MM-DD-YYYY"
+  }
+}

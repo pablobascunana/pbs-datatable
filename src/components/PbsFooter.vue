@@ -23,7 +23,3 @@ defineExpose({ footerRowsMessage });
     <span id="tableFooterMessage">{{ footerRowsMessage }}</span>
   </div>
 </template>
-
-<style scoped lang="scss">
-@import "../assets/scss/components/table.scss";
-</style>
