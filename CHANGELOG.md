@@ -6,3 +6,5 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 Initial version of **pbs-datatable**
+Initial version of unit tests
+Add build configuration
