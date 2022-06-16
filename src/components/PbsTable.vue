@@ -37,7 +37,7 @@ const dateReguex = /(([0-9]{4})[-/.]([0-9]{2})[-/.]([0-9]{2}))|([0-9]{2})[-/.]([
 const header = table.header.find((header) => header.sort && header.order !== '');
 
 const getDateFieldsInRow = (row) => {
-  let fields = []
+  let fields = [];
   Object.keys(row).filter((key) => {
     if (typeof row[key] === 'string' && row[key].match(dateReguex)) {
       fields.push(key);
