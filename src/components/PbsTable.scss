@@ -1,0 +1,96 @@
+:root {
+  --color-text: #474747;
+
+  --color-table-border: #A9A9A9;
+
+  --color-row-hover: #F2F3F4
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%; // lo establezco a 62.5% para que 1rem = 10px -> se obtiene de 10px/16px = 0.625 * 100 = 62.5%
+}
+
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus{
+  border: 1px solid black;
+  outline:none;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.75rem;
+}
+
+.move {
+  cursor: move;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pinned {
+  pointer-events: none;
+}
+
+.container {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 2rem;
+}
+
+.table {
+  width: 100%;
+  color: var(--color-text);
+  border-collapse: collapse;
+  
+  &__header {
+    &-row {
+      padding: 1rem 0 1rem 0;
+      border-bottom: 1px solid var(--color-table-border);
+    }
+    &-arrow-up {
+      transform: translate(0, .8rem);
+    }
+    &-arrow-right {
+      filter: invert(50%);
+      transform: rotate(90deg) translate(0.8rem, 0);
+    }
+
+    &-arrow-down {
+      transform: rotate(180deg) translate(0, -.8rem);
+    }
+  }
+
+  &__body {
+    tr:last-child {
+      border-bottom: 1px solid var(--color-table-border);
+    }
+    tr:hover {
+      background-color: var(--color-row-hover)
+    }
+    &-row {
+      padding: 1rem 0 1rem 0;
+    }
+  }
+
+  &__footer {
+    float: right;
+    margin-top: 2rem;
+  }
+}
+
+.flip-list-move {
+  transition: transform 0.5s;
+}

@@ -1,0 +1,19 @@
+{
+  "header": [
+    { "id": "firstname", "name": "Firstname", "field": "firstname", "width": "20%", "sort": true, "order": "asc" },
+    { "id": "lastname",  "name": "Lastname",  "field": "lastname",  "width": "20%", "sort": true, "order": "" },
+    { "id": "age",       "name": "Age",       "field": "age",       "width": "10%", "sort": true, "order": "" },
+    { "id": "city",      "name": "City",      "field": "city",      "width": "10%", "sort": true },
+    { "id": "date",      "name": "Date",      "field": "date",      "width": "20%", "sort": true },
+    { "id": "phone",     "name": "Phone",     "field": "phone",     "width": "20%", "sort": true },
+    { "id": "actions",   "name": "Actions",   "field": "actions" }
+  ],
+  "rows": [
+    { "firstname": "Lucía", "lastname": "Peréz",   "age": 23, "city": "Cuenca",  "date": "12-23-2020", "phone": "+34 666 777 888", "actions": ["eye-outline", "delete-outline"] },
+    { "firstname": "Ana",   "lastname": "García",  "age": 23, "city": "Madrid",  "date": "10-01-1995", "phone": "678 689 689",     "actions": ["eye-outline", "delete-outline"] },
+    { "firstname": "Luisa", "lastname": "Soriano", "age": 31, "city": "Segovia", "date": "04-14-2001", "phone": "654 789 123",     "actions": ["eye-outline", "delete-outline"] }
+  ],
+  "options": {
+    "dateFormat": "MM-DD-YYYY"
+  }
+}

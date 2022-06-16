@@ -1,0 +1,36 @@
+:root {
+  --color-text: #474747;
+
+  --color-table-border: #A9A9A9;
+
+  --color-row-hover: #F2F3F4
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%; // lo establezco a 62.5% para que 1rem = 10px -> se obtiene de 10px/16px = 0.625 * 100 = 62.5%
+}
+
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus{
+  border: 1px solid black;
+  outline:none;
+}
+
+.move {
+  cursor: move;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pinned {
+  pointer-events: none;
+}
