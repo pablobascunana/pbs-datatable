@@ -9,5 +9,7 @@ module.exports = {
   ],
   rules: {
     "vue/require-default-prop": "off",
-  }
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["off"]
+  },
 }

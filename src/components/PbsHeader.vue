@@ -10,35 +10,35 @@ const props = defineProps({
 
 let headers = ref(props.tableData.header);
 
-const emit = defineEmits(['click-sort', 'drag-column-end'])
+const emit = defineEmits(['drag-column-end']) // 'click-sort',
 
-const isArrowNeutral = (header) => {
-  return 'sort' in header && 'order' in header && header.order !== '' ? false : true;
-}
+// const isArrowNeutral = (header) => {
+//   return 'sort' in header && 'order' in header && header.order !== '' ? false : true;
+// }
 
-const isArrowDown = (header) => {
-  return header.order === 'desc';
-}
+// const isArrowDown = (header) => {
+//   return header.order === 'desc';
+// }
 
-const sortTable = (header) => {
-  const sortedHeader = changeSortOrderInHeaders(header);
-  emit('click-sort', { key: sortedHeader?.id, order: sortedHeader?.order, headers: headers.value });
-}
+// const sortTable = (header) => {
+//   const sortedHeader = changeSortOrderInHeaders(header);
+//   emit('click-sort', { key: sortedHeader?.id, order: sortedHeader?.order, headers: headers.value });
+// }
 
-const changeSortOrderInHeaders = (header) => {
-  headers.value.forEach((head) => {
-    header.id === head.id ? setOrderInColumnSorted(head): head.order = '';
-  })
-  return headers.value.find((head) => head.id === header.id);
-}
+// const changeSortOrderInHeaders = (header) => {
+//   headers.value.forEach((head) => {
+//     header.id === head.id ? setOrderInColumnSorted(head): head.order = '';
+//   })
+//   return headers.value.find((head) => head.id === header.id);
+// }
 
-const setOrderInColumnSorted = (header) => {
-  if (header.order === 'asc') {
-    header.order = 'desc';
-  } else {
-    header.order = header.order == 'desc' ? '' : 'asc'
-  }
-}
+// const setOrderInColumnSorted = (header) => {
+//   if (header.order === 'asc') {
+//     header.order = 'desc';
+//   } else {
+//     header.order = header.order == 'desc' ? '' : 'asc'
+//   }
+// }
 
 const dragColumnEnd = () => {
   emit('drag-column-end', headers);
@@ -57,7 +57,7 @@ defineExpose({ headers, dragColumnEnd });
       :component-data="{ as: 'transition-group' }"
       @end="dragColumnEnd"
     >
-      <template #item="{ element: header }">
+      <template #item="{ element: header, index }">
         <th
           :id="`columnDraggable-${header.id}`"
           class="table__header-row"
@@ -72,17 +72,7 @@ defineExpose({ headers, dragColumnEnd });
           >
             {{ header.name }}
           </span>
-          <img
-            v-if="'sort' in header && header.sort"
-            :id="`tableHeaderSort-${header.id}`"
-            :src="`/triangle-small-up.svg`"
-            alt="sort-icon"
-            :class="{ 'table__header-arrow-right': isArrowNeutral(header), 
-                      'table__header-arrow-down': isArrowDown(header)
-                    }"
-            class="table__header-arrow-up pointer"
-            @click="sortTable(header)"
-          >
+          <slot v-if="'sort' in header && header.sort" :key="header.field" name="icon-sort" :col-index="index" v-bind="{ iconClass }"></slot>
         </th>
       </template>
     </draggable>
